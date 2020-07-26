@@ -124,13 +124,48 @@ class LinkedList {
 
     }
     
-//    removeTail() {
-//        
-//    }
-//    
-//    removeNode(data) {
-//        
-//    }
+    removeTail() {
+        let currentNode = this.head;
+        
+        if(!currentNode) {
+            return;
+        }
+        
+        if (currentNode.getNext() === null) {
+            this.removeHead();
+            return;
+        }
+        
+        while (currentNode !== null) {
+            let nextNode = currentNode.getNext();
+            if (nextNode.getNext() === null) {
+                currentNode.setNext(null);
+                break;
+            }
+            currentNode = currentNode.getNext();
+        }  
+    }
+    
+    removeNode(node) {
+        let currentNode = this.head;
+        
+        // if list is empty or if the first node is the 
+        // specified node, call addHead function
+        if (currentNode === null || currentNode.data === node) {
+            this.removeHead();
+            return;
+        }
+        
+        while (currentNode !== null) {
+            let nextNode = currentNode.getNext();
+            if (nextNode.data === node) {
+                currentNode.setNext(nextNode.getNext());
+                break;
+            }
+            currentNode = currentNode.getNext();
+        }
+        
+    }
     
     // print the current state of the linked list
     printList() {
