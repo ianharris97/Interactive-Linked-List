@@ -1,0 +1,166 @@
+html {
+    font-family: 'Avenir Next', 'sans-serif';
+    font-size: 10px;
+    color: #707070;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.title {
+    font-weight: 400;
+    font-size: 5rem;
+    letter-spacing: 0.25rem;
+    padding: 2.5rem;
+    color: #51CD99;
+}
+
+#modify-list-message {
+    font-weight: 400;
+    font-size: 2.5rem;
+    padding: 1rem;
+}
+
+#list-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 40vh;
+}
+
+.node-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    
+    width: 5rem;
+    height: 5rem;
+    border: 0.5rem solid;
+    border-radius: 2rem;
+}
+
+.node-data {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.arrow {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    
+    font-weight: 700;
+    font-size: 1.5rem;
+    
+    width: 5rem;
+    height: 5rem;
+}
+
+.null {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    
+    font-weight: 700;
+    font-size: 1.5rem;
+    
+    width: 5rem;
+    height: 5rem;
+    border: 0.5rem solid #F0F0EF;
+    border-radius: 4rem;
+}
+
+
+.function-container {
+    display: grid;
+    grid-template-areas: "addHead addBefore addAfter addTail"
+                        "removeHead removeData removeData removeTail";
+    place-items: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-wrap: nowrap;
+    
+    font-size: 1.5rem;
+    height: 3rem;
+    margin: 1rem;
+    background-color: #F0F0EF;
+    border-radius: 1.5rem;
+}
+
+.left {
+    padding-left: 1rem;
+}
+
+.right {
+    padding-right: 1rem; 
+}
+
+.button-input {
+    text-align: center;
+    width: 5rem;
+    height: 2rem;
+    margin: 0 0.1rem;
+    border: .1rem solid #F0F0Ef;
+    border-radius: 1rem;
+    background-color: #FFFFFF;
+}
+
+button {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    height: 100%;
+    width: 3rem;
+    border-radius: 3rem;
+}
+
+.add > button {
+    background-color: #51CD99;
+    border: 0.1rem solid #51CD99;
+}
+
+.remove > button {
+        background-color: #E55F5D;
+        border: 0.1rem solid #E55F5D;
+}
+
+#add-head {
+    grid-area: addHead;
+}
+
+#add-before {
+    grid-area: addBefore;
+}
+
+#add-after {
+    grid-area: addAfter;
+}
+
+#add-tail {
+    grid-area: addTail;
+}
+
+#remove-head {
+    grid-area: removeHead;
+}
+
+#remove-tail{
+    grid-area: removeTail;
+}
+
+#remove-by-data {
+    grid-area: removeData;
+}
