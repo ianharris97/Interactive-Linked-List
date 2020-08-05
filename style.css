@@ -10,10 +10,22 @@ html {
 }
 
 body {
+    background-image: url('./background.svg');
+    background-repeat: no-repeat;
+    background-size: cover; 
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
+}
+
+.head {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 20vh;
 }
 
 .title {
@@ -34,7 +46,9 @@ body {
     display: flex;
     justify-content: center; 
     align-items: center;
-    height: 40vh;
+    flex-wrap:wrap;
+    width: 90%;
+    height: 60vh;
 }
 
 .node-container {
@@ -45,12 +59,13 @@ body {
     width: 5rem;
     height: 5rem;
     border: 0.5rem solid;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
 }
 
 .node-data {
     font-weight: 700;
     font-size: 1.5rem;
+    text-align: center;
 }
 
 .arrow {
@@ -59,7 +74,7 @@ body {
     align-items: center;
     
     font-weight: 700;
-    font-size: 1.5rem;
+    font-size: 2rem;
     
     width: 5rem;
     height: 5rem;
@@ -85,6 +100,8 @@ body {
     grid-template-areas: "addHead addBefore addAfter addTail"
                         "removeHead removeData removeData removeTail";
     place-items: center;
+    grid-gap: 1rem;
+    width: 50%;
 }
 
 .button {
