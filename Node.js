@@ -1,32 +1,41 @@
 // Node class for both linear and bilinear traversial
 class Node {
-  constructor(data) {
-    this.data = data;
-    this.next = null;
-    this.previous = null;
-  }
-
-  setNext(node) {
-    if (node instanceof Node || node === null) {
-      this.next = node;
-    } else {
-      throw new Error('Invalid');
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+        this.previous = null;
+        this.color = '';
     }
-  }
 
-  setPrevious(node) {
-    if (node instanceof Node || node === null) {
-      this.previous = node;
-    } else {
-      throw new Error('Invalid');
+    setNext(node) {
+      if (node instanceof Node || node === null) {
+        this.next = node;
+        } else {
+        throw new Error('Invalid');
+        }
     }
-  }
 
-  getNext() {
-    return this.next;
-  }
+    setPrevious(node) {
+      if (node instanceof Node || node === null) {
+        this.previous = node;
+        } else {
+        throw new Error('Invalid');
+        }
+    }
+    
+    setColor(color) {
+        this.color = color;
+    }
+    
+    getColor() {
+        return this.color;
+    }
 
-  getPrevious() {
-    return this.previous;
-  }
+    getNext() {
+        return this.next;
+    }
+
+    getPrevious() {
+        return this.previous;
+    }
 }
