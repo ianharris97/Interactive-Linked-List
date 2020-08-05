@@ -1,153 +1,85 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="./style.css">
-
-    <title>Interactive Linked List</title>
-  </head>
-  
-  <body>
-    <div class="container-fluid">
-        
-        <div class="info">
-            
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./style.css">
+<!--
+        <script src="./Node.js"></script>
+        <script src="./LinkedList.js"></script>
+        <script src="./main.js"></script>
+-->
+        <title>Interactive Linked List</title>
+    </head>
+    <body>
+      
+      <h1 class="title">singly linked list</h1>
+      <h3 id="modify-list-message">the list is empty</h3>
+       
+        <!-- List Container -->
+        <div id="list-container">
+            <div class="null">
+                <h3>null</h3>
+            </div>
         </div>
-        
-        <div class="heading">
-           <div class="row d-flex justify-content-center">
-               <h1>Singly Linked List</h1>
-           </div>
-           <div class="row d-flex justify-content-center">
-               <h3 id="message">the list is empty</h3>
-           </div>
-        </div>
-        
-        <!-- Linked List -->
-        <div class="row d-flex justify-content-center list-container">
-        </div>
-        
-        <!-- Function Buttons -->
-        <div class="function-buttons-container">
+       
+        <div class="function-container">
             <!-- Add Buttons -->
-            <div class="row">
-               <!-- addHead Button -->
-                <div class="col-3" >
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">addHead(</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="" id="addHead-data">
-                        <div class="input-group-append">
-                            <span class="input-group-text">)</span>
-                            <button class="btn btn-outline-secondary" type="button" id="addHeadButton" onclick="addHeadButton()" >add</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- addBefore Button -->
-                <div class="col-3">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">addBefore(</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="node" id="addBefore-node">
-                        <input type="text" class="form-control" placeholder="data" id="addBefore-data">
-                        <div class="input-group-append">
-                            <span class="input-group-text">)</span>
-                            <button class="btn btn-outline-secondary" type="button" id="addBeforeButton" onclick="addBeforeButton()">add</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- addAfter Button -->
-                <div class="col-3">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">addAfter(</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="node" id="addAfter-node">
-                        <input type="text" class="form-control" placeholder="data" id="addAfter-data">
-                        <div class="input-group-append">
-                            <span class="input-group-text">)</span>
-                            <button class="btn btn-outline-secondary" type="button" id="addAfterButton" onclick="addAfterButton()">add</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- addTail Button -->
-                <div class="col-3">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">addTail(</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="data" id="addTail-data">
-                        <div class="input-group-append">
-                            <span class="input-group-text">)</span>
-                            <button class="btn btn-outline-secondary" type="button" id="addTailButton" onclick="addTailButton()">add</button>
-                        </div>
-                    </div>
-                </div>
+            <!-- addHead Button-->
+            <div class="button add" id="add-head">
+                <span class="left">addHead(</span>
+                <input type="text" placeholder="data" class="button-input" id="addHead-data">
+                <span class="right">)</span>
+                <button onclick="addHeadButton()" type="button">+</button>
+            </div>
+            
+            <!-- addBefore Button -->
+            <div class="button add" id="add-before">
+                <span class="left">addBefore(</span>
+                <input type="text" placeholder="node" class="button-input" id="addBefore-node">
+                <input type="text" placeholder="data"  class="button-input" id="addBefore-data">
+                <span class="right">)</span>
+                <button onclick="addBeforeButton()" type="button">+</button>
+            </div>
+            
+            <!-- addAfter Button -->
+            <div class="button add" id="add-after">
+                <span class="left">addAfter(</span>
+                <input type="text" placeholder="node" class="button-input" id="addAfter-node">
+                <input type="text" placeholder="data" class="button-input" id="addAfter-data">
+                <span class="right">)</span>
+                <button onclick="addAfterButton()" type="button">+</button>
+            </div>
+            
+            <!-- addTail Button -->
+            <div class="button add" id="add-tail">
+                <span class="left">addTail(</span>
+                <input type="text" placeholder="data" class="button-input" id="addTail-data">
+                <span class="right">)</span>
+                <button onclick="addTailButton()" type="button">+</button>
             </div>
             
             <!-- Remove Buttons -->
-            <div class="row">
-               <!-- removeHead Button -->
-                <div class="col-4">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">removeHead( )</span>
-                        </div>
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="removeHeadButton" onclick="removeHeadButton()">remove</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- removeTail Button -->
-                <div class="col-4">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">removeTail( )</span>
-                        </div>
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" id="removeTailButton" onclick="removeTailButton()">remove</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- removeNode Button -->
-                <div class="col-4">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">removeNode(</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="node" id="removeNode-node">
-                        <div class="input-group-append">
-                           <span class="input-group-text">)</span>
-                            <button class="btn btn-outline-secondary" type="button" id="removeNodeButton" onclick="removeNodeButton()">remove</button>
-                        </div>
-                    </div>
-                </div>
+            <!-- removeHead Button-->
+            <div class="button remove" id="remove-head">
+                <span class="left right">removeHead( )</span>
+                <button onclick="removeHeadButton()" type="button">-</button>
+            </div>
+            
+            <!-- removeTail Button -->
+            <div class="button remove" id="remove-tail">
+                <span class="left right">removeTail( )</span>
+                <button onclick="removeTailButton()" type="button">-</button>
+            </div>
+            
+            <!-- removeNode Button -->
+            <div class="button remove" id="remove-by-data">
+                    <span class="left">removeNode(</span>
+                    <input type="text" placeholder="data" class="button-input" id="removeNode-data">
+                    <span class="right">)</span>
+                    <button onclick="removeNodeButton()" type="button">-</button>
             </div>
         </div>
-        
-    </div>
-    
-    <script src="./Node.js"></script>
-    <script src="./LinkedList.js"></script>
-    <script src="./main.js"></script>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-  </body>
+        <script src="./Node.js"></script>
+        <script src="./LinkedList.js"></script>
+        <script src="./main.js"></script>
+    </body>
 </html>
