@@ -2,6 +2,10 @@ html {
     font-family: 'Avenir Next', 'sans-serif';
     font-size: 10px;
     color: #707070;
+    
+    background-image: url('./background-image.svg');
+    background-repeat: no-repeat;
+    background-size: cover; 
 }
 
 * {
@@ -10,13 +14,21 @@ html {
 }
 
 body {
-    background-image: url('./background.svg');
-    background-repeat: no-repeat;
-    background-size: cover; 
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100vh;
+}
+
+a {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 5rem;
+    margin: 2.5rem 0 0 2.5rem;
 }
 
 .head {
@@ -32,7 +44,7 @@ body {
     font-weight: 400;
     font-size: 5rem;
     letter-spacing: 0.25rem;
-    padding: 2.5rem;
+    padding: 0 2.5rem 2.5rem 2.5rem;
     color: #51CD99;
 }
 
@@ -47,7 +59,7 @@ body {
     justify-content: center; 
     align-items: center;
     flex-wrap:wrap;
-    width: 90%;
+    width: 80%;
     height: 60vh;
 }
 
@@ -66,6 +78,7 @@ body {
     font-weight: 700;
     font-size: 1.5rem;
     text-align: center;
+/*    color: #F0F0EF;*/
 }
 
 .arrow {
@@ -90,7 +103,7 @@ body {
     
     width: 5rem;
     height: 5rem;
-    border: 0.5rem solid #F0F0EF;
+    border: 0.5rem solid #707070;
     border-radius: 4rem;
 }
 
@@ -100,8 +113,6 @@ body {
     grid-template-areas: "addHead addBefore addAfter addTail"
                         "removeHead removeData removeData removeTail";
     place-items: center;
-    grid-gap: 1rem;
-    width: 50%;
 }
 
 .button {
@@ -110,6 +121,7 @@ body {
     align-items: center;
     flex-wrap: nowrap;
     
+    font-weight: 500;
     font-size: 1.5rem;
     height: 3rem;
     margin: 1rem;
@@ -149,9 +161,19 @@ button {
     border: 0.1rem solid #51CD99;
 }
 
+.add > button:hover {
+    background-color: #47B486;
+    border: 0.1rem solid #47B486;
+}
+
 .remove > button {
         background-color: #E55F5D;
         border: 0.1rem solid #E55F5D;
+}
+
+.remove > button:hover {
+        background-color: #B94C4B;
+        border: 0.1rem solid #B94C4B;
 }
 
 #add-head {

@@ -165,9 +165,10 @@ class LinkedList {
             }
             currentNode = currentNode.getNext();
         }
-        
+        this.printMessage('removeNode', currentNode);
     }
     
+    // chooses a random color for each node's border
     chooseColor() {
         let colors = ['#E55F5D', '#FA8455', '#FFC670', '#51CD99', '#7FD6D8', '#8E97DA', '#E3AEC9'];
         let color = colors[Math.round(Math.random() * 6)];
@@ -175,6 +176,7 @@ class LinkedList {
         return color;
     }
     
+    // creates an arrow for inbetween each node
     addArrow() {
         let arrowDiv = document.createElement('div');
         let arrow = document.createElement('p');
@@ -186,6 +188,7 @@ class LinkedList {
         this.listContainer.appendChild(arrowDiv);
     }
     
+    // 
     addNull() {
         let nullDiv = document.createElement('div');
         let nullData = document.createElement('h3');
@@ -195,6 +198,7 @@ class LinkedList {
         this.listContainer.appendChild(nullDiv);
     }
     
+    // print message on changes made to the list
     printMessage(change, data, node) {
         switch (change) {
             case 'addHead': 
@@ -235,6 +239,7 @@ class LinkedList {
             nodeDiv.classList.add('node-container');
             nodeData.classList.add('node-data');
             nodeDiv.style.borderColor = currentNode.getColor();
+            //nodeDiv.style.backgroundColor = currentNode.getColor();
             
             nodeData.innerHTML = currentNode.data;
             nodeDiv.appendChild(nodeData);
